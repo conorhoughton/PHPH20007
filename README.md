@@ -1,0 +1,1 @@
+Notes for the two lecture introduction to computational neuroscience I give as part of the unit PHPH20007 delivered to second year Neuroscience students. 
