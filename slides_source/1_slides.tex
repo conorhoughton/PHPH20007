@@ -39,14 +39,7 @@
 \maketitle
 
 \begin{frame}{Modelling}
-  Modelling helps us get more out of data: it matches what we measure to what we want to know.
-  \end{frame}
-
-
-\begin{frame}{Modelling}
-We would like to model neurons; it turns out the differential equation
-we need it the same as the equation for the height of water in a leaky
-bucket, so we are going to look at that first. This same equation occurs again and again in biology.
+  Modelling helps us get more out of data: it matches what we measure to what we want to know. Sometimes it suggests what the brain might be doing and how it is doing it.
   \end{frame}
 
 
@@ -96,6 +89,17 @@ $$
   
   
 \end{frame}
+
+
+\begin{frame}{A leaky bucket - increased inflow}
+
+  \begin{center}
+    \includegraphics[height=6cm]{glass.png}
+  \end{center}
+  
+  
+\end{frame}
+
 
 
 \begin{frame}{A leaky bucket - increased inflow}
@@ -164,7 +168,7 @@ $$
 \end{column}
 \begin{column}{0.5\textwidth}
   \cred{} $i(t)$\color{black}{} is the rate of flow into the
-  bucket.\\[1cm] It is a \textsl{rate} so it would be meaured in
+  bucket.\\[1cm] It is a \textsl{rate} so it would be measured in
   volume per time, for example, \crish$Ls^{-1}$\cbla.
 \end{column}
 \end{columns}
@@ -180,7 +184,7 @@ $$
 \end{column}
 \begin{column}{0.5\textwidth}
   \cred{} $l(t)$\color{black}{} is the rate of flow out of the
-  bucket.\\[1cm] It is a \textsl{rate} so it would be meaured in
+  bucket.\\[1cm] It is a \textsl{rate} so it would be measured in
   volume per time, for example, \crish$Ls^{-1}$\cbla.
   
 \end{column}
@@ -196,7 +200,7 @@ $$
      \end{center}
 \end{column}
 \begin{column}{0.5\textwidth}
-  The speed of the leak depends on the hieght of the water so\crish
+  The speed of the leak depends on the height of the water so\crish
   $$l(t)\propto h(t)$$
   \cbla{}or, adding a constant of proportionality\crish
   $$l(t)=Gh(t)$$
@@ -228,7 +232,7 @@ $$
 \end{frame}
 
 
-\begin{frame}{A leaky bucket - volumn}
+\begin{frame}{A leaky bucket - volume}
 \begin{columns}
 \begin{column}{0.5\textwidth}
   \begin{center}
@@ -242,7 +246,7 @@ The volume depends on the height:
   \crish
   $$V(t)=Ch(t)$$ \cbla{}where \crish$C$\cbla{} is a constant.\\[0.5cm]
   In the case of a
-  cylindrical bucket, using the formula for the volumn of a cylinder
+  cylindrical bucket, using the formula for the volume of a cylinder
   tells us that \crish$C=\pi r^2$\cbla{} where \crish$r$\cbla{} is the
   radius of the bucket; but we'll just call it \crish$C$\cbla.
 \end{column}
@@ -270,10 +274,10 @@ The volume depends on the height:
 \begin{frame}{Equation for a leaky bucket}
   \crish
   $$\frac{dV}{dt}=i-Gh$$
-  \cbla{}Substituting \crish$V=Ch$\cbla{} we get\crish
+  \cbla{}Substituting \cblu$V=Ch$\cbla{} we get\crish
   $$\frac{d\cblu Ch\crish}{dt}=i-Gh$$
   \cbla{}Since \crish$C$\cbla{} is a constant this means\crish
-  $$C\frac{dh}{dt}=i-Gh$$\cbla
+  $$\cblu{}C\crish\frac{d\cblu{}h\crish}{dt}=i-Gh$$\cbla
   This is our basic equation for the height of the water in a leaky bucket.
 \end{frame}
 
@@ -282,9 +286,9 @@ The volume depends on the height:
   Let's rewrite this equation as 
   \crish
   $$\cblu\tau\crish\frac{dh}{dt}=\frac{1}{G}i-h$$\cbla where
-  \cblu$\tau\crish{}=C/G$\cbla{}.\\[1cm]
+  \cblu$\tau=C/G$\cbla{}.\\[1cm]
   This notation is used because
-  \cblu$\tau$\cbla{} is a timescale and \crish$\tau$\cbla{} is the
+  \cblu$\tau$\cbla{} is a time-scale and \crish$\tau$\cbla{} is the
   Greek equivalent of \crish$t$\cbla. If you work out all the units for the constants \crish$C$\cbla{} and \crish$G$\cbla{} you can see \cblu$\tau$\cbla{} has units of time; it also balances the \textsl{per time} in the derivative. 
 \end{frame}
 
@@ -296,14 +300,14 @@ The volume depends on the height:
 \begin{frame}{Behaviour of the equation}
   \crish
   $$\tau\frac{dh}{dt}=\frac{1}{G}\bar{\i}-h$$\cbla If
-  \cblu{}$\bar{\i}=Gh$\cbla{} then \cblu{}$dh/dt=0$\cbla{}. This is
+  \cblu{}$h=\bar{\i}/G$\cbla{} then \cblu{}$dh/dt=0$\cbla{}. This is
   the equilibrium where the inflow is equal to the outflow.
 \end{frame}
 
 \begin{frame}{Behaviour of the equation}
   \crish
   $$\tau\frac{dh}{dt}=\frac{1}{G}\bar{\i}-h$$\cbla If
-  \cblu{}$\bar{\i}<Gh$\cbla{} then \cblu{}$dh/dt<0$\cbla{} and the
+  \cblu{}$h>\bar{\i}/G$\cbla{} then \cblu{}$dh/dt<0$\cbla{} and the
   level of the water falls; so if the water height is too high it
   decreases towards equilibrium.
 \end{frame}
@@ -332,8 +336,8 @@ The volume depends on the height:
 \begin{frame}{Behaviour of the equation}
   \crish
   $$\tau\frac{dh}{dt}=\frac{1}{G}\bar{\i}-h$$\cbla Conversely if
-  \cblu{}$\bar{\i}>Gh$\cbla{} then \cblu{}$dh/dt>0$\cbla{} and the
-  level of the water falls; so if the water height is too low it
+  \cblu{}$h<\bar{\i}/G$\cbla{} then \cblu{}$dh/dt>0$\cbla{} and the
+  level of the water rises; so if the water height is too low it
   increases towards equilibrium.
 \end{frame}
 
@@ -341,7 +345,7 @@ The volume depends on the height:
 \begin{frame}{Behaviour of the equation}
   \crish
   $$\tau\frac{dh}{dt}=\frac{1}{G}\bar{\i}-h$$\cbla Notice also that the more
-  \crish{}$\bar{\i}>Gh$\cbla{} the more \crish{}$dh/dt>0$\cbla{} and \textsl{visa versa} for \crish{}$\bar{\i}<Gh$\cbla: the further the hieght is from the equilibrium, the faster it goes towards equilibrium.
+  \crish{}$h<\bar{\i}/G$\cbla{} the more \crish{}$dh/dt>0$\cbla{} and \textsl{visa versa} for \crish{}$h>\bar{\i}/G$\cbla: the further the height is from the equilibrium, the faster it goes towards equilibrium.
 \end{frame}
 
 
@@ -367,7 +371,7 @@ $$e^{-t/\tau}$$
 \cbla{}is the \cblu{}exponential function\cbla{}; sometimes it is written in another form:
 \cblu
 $$\exp{\left(-\frac{t}{\tau}\right)}$$
-\cbla{}and is one of the start function like sine and cosine.
+\cbla{}and is one of the standard mathematical functions like sine and cosine.
 \end{frame}
 
 \begin{frame}{Exponential}
@@ -381,7 +385,7 @@ $$\exp{\left(-\frac{t}{\tau}\right)}$$
 \begin{frame}{Exponential}
   \crish$$y=e^{-t/2}$$
   \begin{center}
-    \include{exptau2}
+    \include{exptauhalf}
   \end{center}
   \end{frame}
 
@@ -389,7 +393,7 @@ $$\exp{\left(-\frac{t}{\tau}\right)}$$
 \begin{frame}{Exponential}
   \crish$$y=e^{-2t}$$
   \begin{center}
-    \include{exptauhalf}
+    \include{exptau2}
   \end{center}
   \end{frame}
 
@@ -397,19 +401,10 @@ $$\exp{\left(-\frac{t}{\tau}\right)}$$
 
 \begin{frame}{Solution of the equation}
   \crish{}
-$$h(t)=[h(0)-\bar{\i}/G]\cblu{}e^{-t/\tau}\crish{}+\bar{\i}/G$$
-\cbla{}Here\cblu
-$$e^{-t/\tau}$$
-\cbla{}so the exponential decays away.
-\end{frame}
-
-
-\begin{frame}{Solution of the equation}
-  \crish{}
 $$h(t)=[h(0)-\bar{\i}/G]e^{-t/\tau}+\cblu{}\bar{\i}/G\crish{}$$
-\cbla{}Here\cblu
+\cbla{}and the\cblu
 $$e^{-t/\tau}$$
-\cbla{}so the exponential decays away and the height approaches its equilibrium value of \cblu$\bar{\i}/G$\crish.
+\cbla{}in the first term decays away and the height approaches its equilibrium value of \cblu$\bar{\i}/G$\crish.
 \end{frame}
 
 \begin{frame}{Exponential relaxation}
@@ -444,6 +439,12 @@ input.
 \end{frame}
 
 \begin{frame}{Numerical solution}
+This means we work out the values of the solution approximately on a computer without solving the equation explicitly.
+  \end{frame}
+
+
+
+\begin{frame}{Numerical solution}
   \begin{center}
     \includegraphics[width=6cm]{cyclist1.png}
   \end{center}
@@ -462,10 +463,10 @@ input.
 \frac{df(t)}{dt}=F(f,t)
 $$
 \cbla{}This includes our bucket case if we replace \crish$f$\cbla{} with \crish$h$\cbla{} and \crish$F(f,t)$\cbla{}
-with \crish$(i-Gh)/C$\cbla.
+with \crish$(i/G-h)/\tau$\cbla.
 \end{frame}
 
-\begin{frame}{Eulers approximation}
+\begin{frame}{Euler's approximation}
   \crish
   $$
   f(t+\delta t)\approx f(t)+\delta t F(f,t)
@@ -474,7 +475,30 @@ with \crish$(i-Gh)/C$\cbla.
 \end{frame}
 
 
-\begin{frame}{Eulers approximation}
+\begin{frame}{Euler's approximation}
+  \crish
+  $$
+  f(t+\delta t)\approx f(t)+\delta t F(f,t)
+  $$
+  \cbla remembering that
+  \crish
+  $$\frac{df(t)}{dt}=F(f,t)$$
+  \cbla{}
+\end{frame}
+
+
+
+\begin{frame}{Euler's approximation}
+  \crish
+  $$
+  f(t+\delta t)= f(t)+\delta t F(f,t)+O(\delta t^2)
+  $$
+\cbla
+\end{frame}
+
+
+
+\begin{frame}{Euler's approximation}
 \crish
   $$
 t_n=t_0+n\delta t
@@ -498,10 +522,10 @@ $$f_{n+1}=f_n+\delta t F(f_n,t_n)$$
 \begin{frame}{Numerical solution}
 \crish
 $$
-h_{n+1}=\frac{[i(t_n)-Gh_n]\delta t}{C}
+h_{n+1}=h_n+\frac{[i(t_n)/G-h_n]\delta t}{\tau}
 $$
 \cbla
-  \end{frame}
+\end{frame}
 
 \begin{frame}{Summary}
   \begin{itemize}
