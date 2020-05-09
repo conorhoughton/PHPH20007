@@ -2,7 +2,7 @@
 \documentclass{beamer}
 \usepackage[latin1]{inputenc}
 %\usetheme{Montpellier}
-\usetheme{Boadilla}
+%\usetheme{Boadilla}
 %\usecolortheme[RGB={204,51,255}]{structure}
 %\usecolortheme[named=purple]{structure}
 \usecolortheme[RGB={62,128,62}]{structure}
@@ -17,6 +17,8 @@
 \definecolor{purple}{rgb}{.5,0.0,0.5}
 \usepackage{graphicx}
 \usepackage{pstricks}
+
+\setbeamertemplate{navigation symbols}{}
 
 \newcommand{\crish}{\color{reddish}}
 \newcommand{\cbla}{\color{black}}
@@ -35,6 +37,18 @@
 \begin{document}
 
 \maketitle
+
+\begin{frame}{Modelling}
+  Modelling helps us get more out of data: it matches what we measure to what we want to know.
+  \end{frame}
+
+
+\begin{frame}{Modelling}
+We would like to model neurons; it turns out the differential equation
+we need it the same as the equation for the height of water in a leaky
+bucket, so we are going to look at that first. This same equation occurs again and again in biology.
+  \end{frame}
+
 
 \begin{frame}{The leaky integrate and fire model}
 \color{black}
@@ -161,7 +175,7 @@ $$
 \begin{columns}
 \begin{column}{0.5\textwidth}
   \begin{center}
-     \includegraphics[height=6cm]{glass_i_red.png}      
+     \includegraphics[height=6cm]{glass_l_red.png}      
      \end{center}
 \end{column}
 \begin{column}{0.5\textwidth}
@@ -178,7 +192,7 @@ $$
 \begin{columns}
 \begin{column}{0.5\textwidth}
   \begin{center}
-     \includegraphics[height=6cm]{glass_i_red.png}      
+     \includegraphics[height=6cm]{glass_l_red.png}      
      \end{center}
 \end{column}
 \begin{column}{0.5\textwidth}
@@ -275,8 +289,8 @@ The volume depends on the height:
 \end{frame}
 
 \begin{frame}{Constant input}
-  First lets looks at what happens when the water is flowing in at a constant rate, that is when \crish$i$\cbla{} doesn't change with time; lets write\crish{}
-  $$i=\bar{\i}$$ when the input is constant.
+  First lets looks at what happens when the water is flowing in at a constant rate, that is when \crish$i$\cbla{} doesn't change with time; lets write\cblu{}
+  $$i=\bar{\i}$$\cbla{} when the input is constant.
 \end{frame}
 
 \begin{frame}{Behaviour of the equation}
@@ -326,9 +340,178 @@ The volume depends on the height:
 
 \begin{frame}{Behaviour of the equation}
   \crish
-  $$\tau\frac{dh}{dt}=\frac{1}{G}\bar{\i}-h$$\cbla Notice also tht the more
+  $$\tau\frac{dh}{dt}=\frac{1}{G}\bar{\i}-h$$\cbla Notice also that the more
   \crish{}$\bar{\i}>Gh$\cbla{} the more \crish{}$dh/dt>0$\cbla{} and \textsl{visa versa} for \crish{}$\bar{\i}<Gh$\cbla: the further the hieght is from the equilibrium, the faster it goes towards equilibrium.
 \end{frame}
+
+
+\begin{frame}{Solution of the equation}
+  In fact we can solve the equation:\crish{}
+$$h(t)=[h(0)-\bar{\i}/G]e^{-t/\tau}+\bar{\i}/G$$
+\cbla{}Solving the equation isn't hard but we won't look at it here.
+\end{frame}
+
+
+\begin{frame}{Solution of the equation}
+  \crish{}
+$$h(t)=[\cblu{}h(0)\crish{}-\bar{\i}/G]e^{-t/\tau}+\bar{\i}/G$$
+\cbla{}where \cblu$h(0)$\cbla{} is the initial value of \crish$h$\cbla{}; that is the value it starts at.
+\end{frame}
+
+
+\begin{frame}{Solution of the equation}
+  \crish{}
+$$h(t)=[h(0)-\bar{\i}/G]\cblu{}e^{-t/\tau}\crish{}+\bar{\i}/G$$
+\cbla{}Here\cblu
+$$e^{-t/\tau}$$
+\cbla{}is the \cblu{}exponential function\cbla{}; sometimes it is written in another form:
+\cblu
+$$\exp{\left(-\frac{t}{\tau}\right)}$$
+\cbla{}and is one of the start function like sine and cosine.
+\end{frame}
+
+\begin{frame}{Exponential}
+  \crish$$y=e^{-t}$$
+  \begin{center}
+    \include{exp}
+  \end{center}
+  \end{frame}
+
+
+\begin{frame}{Exponential}
+  \crish$$y=e^{-t/2}$$
+  \begin{center}
+    \include{exptau2}
+  \end{center}
+  \end{frame}
+
+
+\begin{frame}{Exponential}
+  \crish$$y=e^{-2t}$$
+  \begin{center}
+    \include{exptauhalf}
+  \end{center}
+  \end{frame}
+
+
+
+\begin{frame}{Solution of the equation}
+  \crish{}
+$$h(t)=[h(0)-\bar{\i}/G]\cblu{}e^{-t/\tau}\crish{}+\bar{\i}/G$$
+\cbla{}Here\cblu
+$$e^{-t/\tau}$$
+\cbla{}so the exponential decays away.
+\end{frame}
+
+
+\begin{frame}{Solution of the equation}
+  \crish{}
+$$h(t)=[h(0)-\bar{\i}/G]e^{-t/\tau}+\cblu{}\bar{\i}/G\crish{}$$
+\cbla{}Here\cblu
+$$e^{-t/\tau}$$
+\cbla{}so the exponential decays away and the height approaches its equilibrium value of \cblu$\bar{\i}/G$\crish.
+\end{frame}
+
+\begin{frame}{Exponential relaxation}
+  These dynamics are very common and are sometimes called \textsl{exponential relaxation to the equilibrium}. Here are some examples with \crish$\bar{\i}=G$\cbla, \crish$\tau=1$\cbla{} and three different initial values \crish$h(0)$\cbla.
+\begin{center}
+\include{bucket_v}
+\end{center}
+\end{frame}
+
+
+\begin{frame}{Variable input}
+
+If the input \crish$i$\cbla changes with time it is often still
+possible to solve the equation, but if you have have a multi-neuron
+model this might not be possible, so it is often easier to solve
+\textsl{numerically}; that is work out the value step by step. We will
+look at that but first we should note we have an idea of what happens
+from considering the constant case. The solution \textsl{chases} the
+input.
+
+\end{frame}
+  
+\begin{frame}{Variable input}
+  Lets look at an example where the input is a sine wave\cblu
+  $$i(t)=\sin{t}$$
+  \cbla{}and the equation is evolved with \crish$h(0)=0$\cbla{} and three different \crish$\tau$\cbla{}  values.
+\end{frame}
+  
+\begin{frame}{Variable input}
+  \vskip -0.7cm
+  \include{chasing}
+\end{frame}
+
+\begin{frame}{Numerical solution}
+  \begin{center}
+    \includegraphics[width=6cm]{cyclist1.png}
+  \end{center}
+  \end{frame}
+
+
+\begin{frame}{Numerical solution}
+  \begin{center}
+    \includegraphics[width=6cm]{cyclist2.png}
+  \end{center}
+  \end{frame}
+
+\begin{frame}{Numerical solution}
+\crish
+  $$
+\frac{df(t)}{dt}=F(f,t)
+$$
+\cbla{}This includes our bucket case if we replace \crish$f$\cbla{} with \crish$h$\cbla{} and \crish$F(f,t)$\cbla{}
+with \crish$(i-Gh)/C$\cbla.
+\end{frame}
+
+\begin{frame}{Eulers approximation}
+  \crish
+  $$
+  f(t+\delta t)\approx f(t)+\delta t F(f,t)
+  $$
+\cbla
+\end{frame}
+
+
+\begin{frame}{Eulers approximation}
+\crish
+  $$
+t_n=t_0+n\delta t
+$$
+\cbla
+and\crish
+$$f(t_n)\approx \cred{}f_n$$
+\cbla
+  \begin{center}
+    \includegraphics[width=6cm]{f.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Numerical solution}
+\crish
+$$f_{n+1}=f_n+\delta t F(f_n,t_n)$$
+\cbla
+  \end{frame}
+
+
+\begin{frame}{Numerical solution}
+\crish
+$$
+h_{n+1}=\frac{[i(t_n)-Gh_n]\delta t}{C}
+$$
+\cbla
+  \end{frame}
+
+\begin{frame}{Summary}
+  \begin{itemize}
+  \item Worked out the equation for the height of water in a bucket.
+  \item Looked at its solution for constant input.
+  \item Gained some intuition as to how it behaves for variable input.
+  \item Learned how to solve it numerical using the Euler approximation.
+  \end{itemize}
+\end{frame}
+
 
 
 \end{document}
