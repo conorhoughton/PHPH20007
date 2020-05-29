@@ -1,0 +1,180 @@
+
+\documentclass{beamer}
+\usepackage[latin1]{inputenc}
+%\usetheme{Montpellier}
+%\usetheme{Boadilla}
+%\usecolortheme[RGB={204,51,255}]{structure}
+%\usecolortheme[named=purple]{structure}
+\usecolortheme[RGB={62,128,62}]{structure}
+%\definecolor{dark}{rgb}{0.3,0.15,0.3}
+%\definecolor{light}{rgb}{0.8,0.6,0.8}
+%\definecolor{reddish}{rgb}{.5,0.15,0.15}
+\definecolor{dark}{rgb}{0.5,0.3,0.4}
+%\definecolor{light}{rgb}{0.8,0.6,0.8}
+\definecolor{reddish}{rgb}{.7,0.25,0.25}
+\definecolor{greenish}{rgb}{.25,0.7,0.25}
+\definecolor{blueish}{rgb}{.25,0.25,0.7}
+\definecolor{purple}{rgb}{.5,0.0,0.5}
+\usepackage{graphicx}
+\usepackage{pstricks}
+
+\setbeamertemplate{navigation symbols}{}
+
+\newcommand{\crish}{\color{reddish}}
+\newcommand{\cbla}{\color{black}}
+\newcommand{\cred}{\color{red}}
+\newcommand{\cblu}{\color{blue}}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,decorations.markings,positioning}
+\usepackage{epstopdf}
+
+\title[Computational Neuroscience 1.2]{Computational Neuroscience 1.2}
+\author{PHPH20007}
+\institute{\texttt{github.com/conorhoughton/PHPH20007}}
+\date{May 2019}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{The equations for a leaky bucket}
+  \crish
+  $$\tau\frac{dh}{dt}=\frac{1}{G}i-h$$\cbla
+  
+  \begin{center}
+    \includegraphics[height=6cm]{glass_in.png}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}{A neuron}
+  \begin{center}
+    \includegraphics[height=8cm]{neuron.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{A neuron has an inside and an outside}
+  \begin{center}
+    \includegraphics[height=8cm]{neuron_filled.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{A neuron has an inside and an outside}
+  \begin{center}
+    \includegraphics[height=8cm]{ions.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Potassium inside and sodium outside}
+  \begin{center}
+    \includegraphics[height=8cm]{uk.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Ions can get through the membrane}
+  \begin{center}
+    \includegraphics[height=6cm]{passive_channel.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Charge is like water}
+  \begin{center}
+    \includegraphics[height=8cm]{glass_neuron.png}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}{Voltage difference}
+  \begin{columns}
+        \begin{column}{0.2\textwidth}
+      \end{column}
+    \begin{column}{0.3\textwidth}
+  $\cred V\crish\sim -70\mbox{mV}\cbla $
+    \end{column}
+    \begin{column}{0.3\textwidth}
+    \includegraphics[height=8cm]{voltage.png}
+    \end{column}
+    \begin{column}{0.2\textwidth}
+      \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Voltage is like pressure}
+  \begin{quote}
+   \textbf{Voltage} is defined as the work needed per unit of charge to move a
+    test charge between the two points.
+  \end{quote}
+\end{frame}
+
+
+\begin{frame}{Capacitance}
+\crish
+$$Q=CV$$
+\cbla  
+\end{frame}
+
+
+\begin{frame}{Ohm's law}
+\crish
+$$V=IR$$
+\cbla
+\begin{center}
+    \includegraphics[height=5cm]{basic_circuit.png}
+\end{center}
+\end{frame}
+
+
+\begin{frame}{Resistance versus Conductance}
+\crish
+$$G=1/R$$
+\cbla{}so\crish
+$$I=GV$$
+\cbla
+\begin{center}
+    \includegraphics[height=5cm]{resistor.jpg}
+\end{center}
+\end{frame}
+
+
+\begin{frame}{Voltage and current}
+\crish
+$$I=GV$$
+\cbla{}so\crish{} $V=0$\cbla{} means \crish{} $I=0$\cbla{}.
+\begin{center}
+    \includegraphics[height=5cm]{basic_circuit_g.png}
+\end{center}
+\end{frame}
+
+
+
+
+
+\begin{frame}{Chemical gradients}
+\begin{center}
+    \includegraphics[height=8cm]{children1.png}
+\end{center}
+\end{frame}
+
+
+\begin{frame}{Chemical gradients}
+\begin{center}
+    \includegraphics[height=8cm]{children2.png}
+\end{center}
+\end{frame}
+
+\begin{frame}{Chemical gradients}
+\begin{center}
+    \includegraphics[height=8cm]{children3.png}
+\end{center}
+\end{frame}
+
+\begin{frame}{Chemical gradients}
+\begin{center}
+    \includegraphics[height=8cm]{children4.png}
+\end{center}
+\end{frame}
+
+
+\end{document}
+
