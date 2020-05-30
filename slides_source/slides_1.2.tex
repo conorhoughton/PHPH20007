@@ -201,7 +201,7 @@ $$I=GV$$
 
 \begin{frame}{Leak potential}
   \crish
-  $$I=G(\cred{}E_l\crish{}-V)$$
+  $$I_l=G(\cred{}E_l\crish{}-V)$$
 \cbla{}
   where \cred$E_l\sim -70$mV\cbla{} is the \cblu{}leak reversal potential\cbla{}. 
 \end{frame}
@@ -209,7 +209,7 @@ $$I=GV$$
 
 \begin{frame}{Leak potential}
   \crish
-  $$I=G(\cred{}E_l\crish{}-V)$$
+  $$I_l=G(E_l-V)$$
 \cbla{}
 
 DON'T WORRY TO MUCH ABOUT THE SIGN, it is easy to get confused so I
@@ -221,12 +221,12 @@ inward.
 
 \begin{frame}{Leak conductance}
   \crish
-  $$I=\cred{}G\crish{}(E_l-V)$$
+  $$I_l=\cred{}G\crish{}(E_l-V)$$
 
   \cbla{} The conductance \cred$G$\cbla{} is the conductance of the membrane and is often called the \cblu{}leak conductance\cbla{}, in fact, there are other conductance that depend on \crish$V$\cbla{}, whereas the leak conductance is constant and sometimes called \cblu{}passive\cbla{}. The symbol \cred{}$g_l$\cbla{} is often used:
 
   \crish
-  $$I=g_l(E_l-V)$$
+  $$I_l=g_l(E_l-V)$$
 \cbla{}
 \end{frame}
 
@@ -238,7 +238,7 @@ inward.
 
 \begin{frame}{The leaky integrator for neurons}
   \crish
-  $$\frac{dQ}{dt}=i(t)-l(t)$$
+  $$\frac{dQ}{dt}=i(t)-I_l(t)$$
   \cbla
 \end{frame}
 
@@ -284,13 +284,157 @@ Dividing across by the \crish{}$g_l$\cbla{} we get
 
 \begin{frame}{Voltage gated channels}
   This isn't the full story
-  \crish$$\tau_m\frac{dV}{dt}=E_l-V+R_mI_e(t)+R_m(\cblu{}\mbox{currents from the gated channels}\crish)$$\cbla{}
+  \crish$$\tau_m\frac{dV}{dt}=E_l-V+R_mI_e(t)+R_m(\cred{}\mbox{currents from the gated channels}\crish)$$\cbla{}
   \begin{center}
-    \includegraphics[height=5cm]{2r9r_opm.png}
+    \includegraphics[height=4cm]{2r9r_opm.png}
 \end{center}
     \vfill
   \flushright{\tiny{image from wikipedia}}
   \end{frame}
+
+
+\begin{frame}{Action potential}
+  \begin{center}
+    \includegraphics[height=8cm]{HH_spike.png}
+\end{center}
+    \vfill
+  \flushright{\tiny{image from Hodgkin and Huxley}}
+  \end{frame}
+
+\begin{frame}{Leaky integrate and fire model}
+
+  \crish
+  $$\tau_m\frac{dV}{dt}=E_l-V+R_mI_e(t)$$
+  \cbla
+
+and put the spike in `by hand'!
+  
+\end{frame}
+
+
+\begin{frame}{Leaky integrate and fire model}
+
+  \crish
+  $$\tau_m\frac{dV}{dt}=E_l-V+R_mI_e(t)$$
+  \cbla
+
+  if \crish{}$V>V_T$\cbla{} there is a \cblu{}spike\cbla{} and \crish{}$V=V_R$\cbla{}.
+  
+\end{frame}
+
+
+\begin{frame}{Leaky integrate and fire model}
+
+  \crish
+  $$\tau_m\frac{dV}{dt}=E_l-V+R_mI_e(t)$$
+  \cbla
+
+  we call \crish{}$V_T $\cbla{} the \cblu{}threshold\cbla{} and
+  \crish{}$V_R$\cbla the \cblu{} reset\cbla{}.
+  
+\end{frame}
+
+
+\begin{frame}{Leaky integrate and fire model}
+
+  \crish
+  $$\tau_m\frac{dV}{dt}=E_l-V+R_mI_e(t)$$
+  \cbla
+
+  with, for example, \crish{}$V_T\sim-55 $ mV\cbla{} and \crish{}$V_R\sim-70$ mV\cbla.
+  
+\end{frame}
+
+\begin{frame}{Constant input}
+
+  \crish
+  $$\tau_m\frac{dV}{dt}=\bar{V}-V$$
+  \cbla{}
+
+  where \crish{}$\bar{V}=E_l+R_mI_e$\cbla{} then\crish{}
+
+  $$V(t)=\bar{V}+[V(0)-\bar{V}]e^{-t/\tau_m}$$
+\cbla{}
+\end{frame}
+
+\begin{frame}{Constant input}
+\crish{}
+  $$V(t)=\bar{V}+[V(0)-\bar{V}]e^{-t/\tau_m}$$
+\cbla{}
+
+If \crish{}$\bar{V}<V_T$\cbla{} the neuron will never spike!
+  
+\end{frame}
+
+
+\begin{frame}{Regular spiking}
+  \begin{center}
+    \include{v_i_f_no}
+\end{center}
+  \end{frame}
+
+
+
+\begin{frame}{Constant input}
+\crish{}
+  $$V(t)=\bar{V}+[V(0)-\bar{V}]e^{-t/\tau_m}$$
+\cbla{}
+
+If \crish{}$\bar{V}>V_T$\cbla{} it will approach \crish{}$\bar{V}$\cbla{} but reach \crish{}$V_T$\cbla{} on the way and spike.
+  
+\end{frame}
+
+
+\begin{frame}{Regular spiking}
+  \begin{center}
+    \include{v_i_f}
+\end{center}
+  \end{frame}
+
+\begin{frame}{f-I curve}
+  \begin{center}
+    \include{f_i_curve}
+\end{center}
+  \end{frame}
+
+\begin{frame}{Some observations}
+  \begin{itemize}
+  \item This tells us that neurons filter their input.
+  \item The model doesn't have spike rate adaptation but can be extended.
+  \item Other extensions give more realistic behaviour near threshold.
+  \item Including the voltage gated channels gives the \cblu{}Hodgkin-Huxley\cbla{} model.
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Some observations}
+  \begin{itemize}
+  \item To make networks we also need a synapse model.
+  \item Lots of synapse models use a similar equation.
+  \item The equation for the voltage gated channels also use the same equation.
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Numerical calculations}
+
+We saw how to integrate the equation numerically. This can be done
+using \texttt{MATLAB}, or better, \texttt{Python} or \texttt{Julia}. There are also specialized
+packages like \texttt{Brian} in \texttt{Python} or \texttt{GENESIS} / \texttt{NEURON} / \texttt{NEST}.
+  
+\end{frame}
+
+
+
+\begin{frame}{Summary}
+  \begin{itemize}
+  \item Studied the dynamics of neurons away from threshold.
+  \item Discussed chemical gradients.
+  \item Looked at the integrate and fire model.
+  \item Considered the f-I curve in the integrate and fire model.
+  \end{itemize}
+\end{frame}
+
 
 
 \end{document}
