@@ -32,7 +32,7 @@
 \title[Computational Neuroscience 1.2]{Computational Neuroscience 1.2}
 \author{PHPH20007}
 \institute{\texttt{github.com/conorhoughton/PHPH20007}}
-\date{May 2019}
+\date{May 2020}
 
 \begin{document}
 
@@ -67,6 +67,12 @@
 \end{frame}
 
 
+\begin{frame}{Voltage difference}
+\begin{center}
+    \includegraphics[height=8cm]{voltage.png}
+\end{center}
+\end{frame}
+
 \begin{frame}{Ion pumps}
   \begin{center}
     \includegraphics[height=8cm]{ion_pump_1.png}
@@ -81,11 +87,36 @@
 \end{frame}
 
 
+\begin{frame}{A neuron has an inside and an outside}
+  \begin{center}
+    \includegraphics[height=8cm]{ions.png}
+  \end{center}
+\end{frame}
+
+
 \begin{frame}{Potassium inside and sodium outside}
   \begin{center}
     \includegraphics[height=8cm]{uk.png}
   \end{center}
 \end{frame}
+
+
+\begin{frame}{Voltage difference}
+  \begin{columns}
+        \begin{column}{0.2\textwidth}
+      \end{column}
+    \begin{column}{0.3\textwidth}
+  $\cred V\crish\sim -70\mbox{mV}\cbla $
+    \end{column}
+    \begin{column}{0.3\textwidth}
+    \includegraphics[height=8cm]{voltage.png}
+    \end{column}
+    \begin{column}{0.2\textwidth}
+      \end{column}
+    \end{columns}
+\end{frame}
+
+
 
 \begin{frame}{Ions can get through the membrane}
   \begin{center}
@@ -120,13 +151,9 @@
    \textbf{Voltage} is defined as the work needed per unit of charge to move a
     test charge between the two points.
   \end{quote}
-\end{frame}
-
-
-\begin{frame}{Capacitance}
-\crish
-$$Q=CV$$
-\cbla  
+\begin{center}
+    \includegraphics[height=5cm]{basic_circuit.png}
+\end{center}
 \end{frame}
 
 
@@ -172,6 +199,14 @@ $$I=GV$$
     \includegraphics[height=8cm]{children2.png}
 \end{center}
 \end{frame}
+
+
+\begin{frame}{Chemical gradients}
+\begin{center}
+    \includegraphics[height=8cm]{children2a.png}
+\end{center}
+\end{frame}
+
 
 \begin{frame}{Chemical gradients}
 \begin{center}
@@ -230,6 +265,14 @@ inward.
 \cbla{}
 \end{frame}
 
+
+\begin{frame}{Capacitance}
+\crish
+$$Q=CV$$
+\cbla
+\end{frame}
+
+
 \begin{frame}{The leaky integrator for neurons}
 \begin{quote}
   rate of change of charge = current in - leak out
@@ -260,11 +303,9 @@ Dividing across by the \crish{}$g_l$\cbla{} we get
   \crish
   $$\tau_m\frac{dV}{dt}=E_l-V+R_mI_e(t)$$
   \cbla
-  where \crish$\tau_m$\cbla{} is called the \cblu{}membrane time constant\cbla{} and \crish{}$R_m=1/g_l$\cbla{} is called the \cblu{}the membrane resistance\cbla{}.
+  where \crish$\tau_m=C/g_l$\cbla{} is called the \cblu{}membrane time constant\cbla{} and \crish{}$R_m=1/g_l$\cbla{} is called the \cblu{} membrane resistance\cbla{}.
 
 \end{frame}
-
-
 
 \begin{frame}{The leaky bucket redux}
 
@@ -295,7 +336,7 @@ Dividing across by the \crish{}$g_l$\cbla{} we get
 
 \begin{frame}{Action potential}
   \begin{center}
-    \includegraphics[height=8cm]{HH_spike.png}
+    \includegraphics[height=6cm]{HH_spike.png}
 \end{center}
     \vfill
   \flushright{\tiny{image from Hodgkin and Huxley}}
@@ -330,7 +371,7 @@ and put the spike in `by hand'!
   \cbla
 
   we call \crish{}$V_T $\cbla{} the \cblu{}threshold\cbla{} and
-  \crish{}$V_R$\cbla the \cblu{} reset\cbla{}.
+  \crish{}$V_R$\cbla{} the \cblu{} reset\cbla{}.
   
 \end{frame}
 
@@ -423,8 +464,6 @@ using \texttt{MATLAB}, or better, \texttt{Python} or \texttt{Julia}. There are a
 packages like \texttt{Brian} in \texttt{Python} or \texttt{GENESIS} / \texttt{NEURON} / \texttt{NEST}.
   
 \end{frame}
-
-
 
 \begin{frame}{Summary}
   \begin{itemize}
