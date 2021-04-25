@@ -11,3 +11,7 @@ and
 https://www.youtube.com/watch?v=VhijgvVwn2g
 
 with the slides in this github.
+
+The second lecture was added in 2021:
+
+https://youtu.be/Q4Vt4pyXRo0
